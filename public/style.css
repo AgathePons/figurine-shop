@@ -1,0 +1,412 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ----------- GENERAL ----------- */
+body {
+  background-color: #fff;
+  font-family: "Arial", sans-serif;
+}
+
+.side-sales-sticker {
+  display: inline-block;
+  position: fixed;
+  left: -10px;
+  top: 40vh;
+  padding: 15px 10px 15px 20px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  background-color: #c80000;
+  color: #fff;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  text-transform: uppercase;
+  transition: left cubic-bezier(0.17, 0.84, 0.44, 1) 0.3s;
+}
+.side-sales-sticker:hover {
+  left: 0;
+  cursor: pointer;
+}
+
+h3 {
+  margin: 5px 0 15px 0;
+  font-family: "Raleway", sans-serif;
+  color: #000;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+h4 {
+  color: #666;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+[class*=btn--] {
+  padding: 1rem;
+  border-radius: 0;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #000;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid white;
+  transition: background-color 0.3s cubic-bezier(0.17, 0.84, 0.44, 1), border 0.3s cubic-bezier(0.17, 0.84, 0.44, 1), color 0.3s cubic-bezier(0.17, 0.84, 0.44, 1);
+}
+
+[class$=btn--primary] {
+  background-color: #c80000;
+  border: 1px solid #c80000;
+  color: #fff;
+}
+[class$=btn--primary]:hover {
+  background-color: #fff;
+  color: #c80000;
+}
+
+[class$=btn--secondary] {
+  background-color: #ccc;
+  border: 1px solid #ccc;
+  color: #000;
+}
+[class$=btn--secondary]:hover {
+  background-color: #fff;
+}
+
+hr {
+  margin: 1rem 0;
+}
+
+/* ----------- HEADER ----------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+header .banner {
+  background-color: #c80000;
+  padding: 1em;
+}
+header .banner h1 {
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+  font-weight: 700;
+  font-size: 2em;
+}
+header .banner h1 span {
+  font-weight: 500;
+  font-size: 0.4em;
+}
+header .banner__sub {
+  background-color: #666;
+  padding: 10px 25px 5px 25px;
+}
+header .banner__sub h2 {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1em;
+}
+header .banner__sub h2 span {
+  font-style: italic;
+  font-size: 1.1em;
+}
+
+/* ----------- PRODUCT PAGE ----------- */
+main.product-page {
+  padding: 25px 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px 15px;
+}
+main.product-page .product {
+  position: relative;
+  max-width: 30%;
+  min-width: 240px;
+  flex-grow: 1;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  padding: 0.5em;
+  box-shadow: 0 0 0 #000;
+  transition: box-shadow cubic-bezier(0.17, 0.84, 0.44, 1) 0.3s;
+}
+main.product-page .product .product__sale-sticker {
+  position: absolute;
+  top: 0.9em;
+  right: 0.9em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 50%;
+  background-color: #666;
+  border: 5px solid #ccc;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1em;
+  transform: rotate(0deg);
+  transition: transform cubic-bezier(0.17, 0.84, 0.44, 1) 0.5s;
+}
+main.product-page .product img {
+  display: inline-block;
+  width: 100%;
+}
+main.product-page .product .product__subtext {
+  margin: 1em 0;
+  padding: 0.3em;
+  border-bottom: 1px solid #ccc;
+  font-family: "Raleway", sans-serif;
+  color: #ccc;
+  font-weight: 700;
+  font-size: 0.7em;
+  text-transform: uppercase;
+}
+main.product-page .product .product__description {
+  margin-bottom: 25px;
+  font-family: "Raleway", sans-serif;
+  color: #000;
+  font-weight: 500;
+  font-size: 0.9em;
+  line-height: 1.2em;
+}
+main.product-page .product .product__add-to-cart-btn {
+  display: flex;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #c80000;
+  background-color: #c80000;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.8em;
+  transition: all cubic-bezier(0.17, 0.84, 0.44, 1) 0.2s;
+}
+main.product-page .product .product__add-to-cart-btn .product__add-to-cart-btn__btn-txt {
+  flex-grow: 1;
+  text-align: left;
+}
+main.product-page .product .product__add-to-cart-btn .product__add-to-cart-btn__old-price {
+  text-decoration: line-through;
+  margin-right: 5px;
+}
+main.product-page .product .product__add-to-cart-btn .product__add-to-cart-btn__price {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+main.product-page .product .product__add-to-cart-btn:hover {
+  cursor: pointer;
+  background-color: #fff;
+  color: #c80000;
+  transition: all cubic-bezier(0.17, 0.84, 0.44, 1) 0.2s;
+}
+main.product-page .product:hover {
+  box-shadow: 0 0 5px #b3b3b3;
+}
+main.product-page .product:hover .product__sale-sticker {
+  transform: rotate(30deg);
+}
+
+/* ----------- CART PAGE ----------- */
+main.cart-page {
+  width: 75%;
+  max-width: 600px;
+  margin: 30px auto 20px auto;
+  font-family: "Raleway", sans-serif;
+  color: #000;
+  font-weight: 500;
+}
+main.cart-page .cart-form {
+  /* Table */
+  /* Shipping form */
+  /* Summary */
+  /* Action button */
+}
+main.cart-page .cart-form .cart-form__cart {
+  width: 95%;
+  margin: 20px auto 15px auto;
+  text-align: center;
+  box-shadow: 0 0 5px #b3b3b3;
+}
+main.cart-page .cart-form .cart-form__cart > thead {
+  font-weight: 700;
+  border-bottom: 1px solid #ccc;
+}
+main.cart-page .cart-form .cart-form__cart > thead > tr > td {
+  padding: 1rem;
+}
+main.cart-page .cart-form .cart-form__cart > tbody > tr:nth-child(odd) {
+  background-color: #ccc;
+}
+main.cart-page .cart-form .cart-form__cart > tbody > tr > td {
+  padding: 0.7rem;
+}
+main.cart-page .cart-form .cart-form__cart > tbody > tr > td.quantity-cell input {
+  min-width: 2rem;
+  max-width: 2.5rem;
+}
+main.cart-page .cart-form .cart-form__cart > tbody > tr > td.quantity-cell button {
+  color: #c80000;
+  text-decoration: underline;
+  text-transform: lowercase;
+  font-size: 0.8rem;
+  background: none;
+  border: none;
+  transition: color 0.3s cubic-bezier(0.17, 0.84, 0.44, 1);
+}
+main.cart-page .cart-form .cart-form__cart > tbody > tr > td.quantity-cell button:hover {
+  cursor: pointer;
+  color: #620000;
+}
+main.cart-page .cart-form .cart-form__cart > tfoot {
+  font-weight: 700;
+}
+main.cart-page .cart-form .cart-form__cart > tfoot > tr > td {
+  padding: 1rem;
+}
+main.cart-page .cart-form .cart-form__cart > tfoot > tr > td.total-cell {
+  color: #c80000;
+  font-size: 1.6rem;
+}
+main.cart-page .cart-form .cart-form__address {
+  display: flex;
+  width: 95%;
+  margin: 2rem auto 0 auto;
+  /* left side */
+  /* right side */
+}
+main.cart-page .cart-form .cart-form__address > * {
+  width: 50%;
+}
+main.cart-page .cart-form .cart-form__address [class^=cart-form__address__] [class$=__input-group] {
+  margin-bottom: 1.5rem;
+}
+main.cart-page .cart-form .cart-form__address .cart-form__address__options .cart-form__address__options__input-group {
+  margin-bottom: 1.5rem;
+}
+main.cart-page .cart-form .cart-form__address .cart-form__address__options .cart-form__address__options__input-group > div {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+main.cart-page .cart-form .cart-form__address .cart-form__address__options .cart-form__address__options__input-group > div > *:hover {
+  cursor: pointer;
+}
+main.cart-page .cart-form .cart-form__address .cart-form__address__postal-address .cart-form__address__postal-address__input-group > div {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+}
+main.cart-page .cart-form .cart-form__address .cart-form__address__postal-address .cart-form__address__postal-address__input-group > div > * {
+  margin-bottom: 0.3rem;
+}
+main.cart-page .cart-form .cart-form__address .cart-form__address__postal-address .cart-form__address__postal-address__input-group > div input, main.cart-page .cart-form .cart-form__address .cart-form__address__postal-address .cart-form__address__postal-address__input-group > div textarea {
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #999999;
+  background-color: #e6e6e6;
+  padding: 0.5rem;
+  transition: border-bottom 0.3s cubic-bezier(0.17, 0.84, 0.44, 1), background-color 0.3s cubic-bezier(0.17, 0.84, 0.44, 1);
+}
+main.cart-page .cart-form .cart-form__address .cart-form__address__postal-address .cart-form__address__postal-address__input-group > div input:focus, main.cart-page .cart-form .cart-form__address .cart-form__address__postal-address .cart-form__address__postal-address__input-group > div input:focus-visible, main.cart-page .cart-form .cart-form__address .cart-form__address__postal-address .cart-form__address__postal-address__input-group > div textarea:focus, main.cart-page .cart-form .cart-form__address .cart-form__address__postal-address .cart-form__address__postal-address__input-group > div textarea:focus-visible {
+  outline: none;
+  border-bottom: 1px solid #666;
+  background-color: #d9d9d9;
+}
+main.cart-page .cart-form .cart-form__address .cart-form__address__postal-address .cart-form__address__postal-address__input-group > div textarea {
+  resize: vertical;
+}
+main.cart-page .cart-form .cart-form__total {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 5px #b3b3b3;
+}
+main.cart-page .cart-form .cart-form__total > * {
+  padding: 2rem;
+  font-weight: 700;
+}
+main.cart-page .cart-form .cart-form__total .cart-form__total__text {
+  font-size: 1.2rem;
+}
+main.cart-page .cart-form .cart-form__total .cart-form__total__amount {
+  color: #c80000;
+  font-size: 1.6rem;
+}
+main.cart-page .cart-form .cart-form__submit {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ----------- FOOTER ----------- */
+footer .footer__decoration {
+  height: 12px;
+  background-image: url(../images/deco.png);
+  background-repeat: repeat-x;
+}
+footer .footer__infos {
+  padding: 0.5em 1.5em 1em 1.5em;
+  background-color: #666;
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.8em;
+}
+
+/*# sourceMappingURL=style.css.map */

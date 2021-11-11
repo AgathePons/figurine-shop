@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oFig - Panier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./public/style.css">
+</head>
+
+<body>
+  <div class="side-sales-sticker">
+    <span>Soldes</span>
+  </div>
+  <header>
+    <div class="banner">
+      <h1>
+        oFig
+        <span>Figurines et statuettes</span>
+      </h1>
+    </div>
+    <div class="banner__sub">
+      <h2>
+        Votre panier
+        <span>2 produits</span>
+      </h2>
+    </div>
+  </header>
+  <main class="cart-page">
+    <form class="cart-form">
+      <h3>Votre panier</h3>
+      <table class="cart-form__cart">
+        <thead>
+          <tr>
+            <td>Figurine</td>
+            <td>Prix unitaire</td>
+            <td>Quantité</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cloud Strife</td>
+            <td>59 €</td>
+            <td class="quantity-cell">
+              <input type="number" value="1" id="product1">
+              <button type="button" id="deleteProduct1Btn">Supprimer</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Tifa Lockhart</td>
+            <td>69 €</td>
+            <td class="quantity-cell">
+              <input type="number" value="1" id="product2">
+              <button type="button" id="deleteProduct2Btn">Supprimer</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Barret Wallace</td>
+            <td>69 €</td>
+            <td class="quantity-cell">
+              <input type="number" value="1" id="product3">
+              <button type="button" id="deleteProduct3Btn">Supprimer</button>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2">Total de la commande :</td>
+            <td class="total-cell">197€</td>
+          </tr>
+        </tfoot>
+      </table>
+      <hr>
+      <h3>Préférences de livraison</h3>
+      <div class="cart-form__address">
+
+        <div class="cart-form__address__options">
+          <h4>Où souhaitez-vous être livré ?</h4>
+          <div class="cart-form__address__options__input-group">
+            <div>
+              <input type="radio" name="address-choice" id="current-address" value="currentAddress">
+              <label for="current-address">Mon adresse courante</label>
+            </div>
+            <div>
+              <input type="radio" name="address-choice" id="other-address" value="otherAddress">
+              <label for="other-address">Autre adresse</label>
+            </div>
+          </div>
+          <h4>Options</h4>
+          <div class="cart-form__address__options__input-group">
+            <div>
+              <input type="checkbox" name="additional-options" id="shipping-info" value="shippingInfo">
+              <label for="shipping-info">Suivi de livraison par sms (inclus)</label>
+            </div>
+            <div>
+              <input type="checkbox" name="additional-options" id="refund" value="refund">
+              <label for="refund">Satisfait ou remboursé (+2 euros)</label>
+            </div>
+            <div>
+              <input type="checkbox" name="additional-options" id="warranty" value="warranty">
+              <label for="warranty">Garantie 2 ans (+10 euros)</label>
+            </div>
+          </div>
+        </div>
+        <div class="cart-form__address__postal-address">
+          <h4>Adresse</h4>
+          <div class="cart-form__address__postal-address__input-group">
+            <div>
+              <label for="street">Rue</label>
+              <input type="text" id="street" placeholder="4, Rue Saint-Glinglin">
+            </div>
+            <div>
+              <label for="postal-code">Code postal</label>
+              <input type="number" id="postal-code" placeholder="37450">
+            </div>
+            <div>
+              <label for="city">Ville</label>
+              <input type="text" id="city" placeholder="Trifouillis-les-Oies">
+            </div>
+          </div>
+          <h4>Informations complémentaires</h4>
+          <div class="cart-form__address__postal-address__input-group">
+            <div>
+              <label for="additional-infos">Interphone, bâtiment, etc.</label>
+              <textarea id="additional-infos" name="additionalInfos" rows="5">
+              </textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="cart-form__total">
+        <span class="cart-form__total__text">
+          Montant total à régler
+        </span>
+        <span class="cart-form__total__amount">
+          197 €
+        </span>
+      </div>
+      <hr>
+      <div class="cart-form__submit">
+        <button class="cart-form__submit__btn cart-form__submit__btn--secondary" type="button">
+          Continuer vos achats
+        </button>
+        <button class="cart-form__submit__btn cart-form__submit__btn--primary" type="button">
+          Valider et payer
+        </button>
+      </div>
+      <hr>
+    </form>
+  </main>
+  <footer>
+    <div class="footer__decoration"></div>
+    <div class="footer__infos">
+      <p>
+        oFig - toutes les images sont sous copyright SquareEnix
+      </p>
+    </div>
+  </footer>
+</body>
+
+</html>

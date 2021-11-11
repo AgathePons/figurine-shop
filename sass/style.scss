@@ -1,0 +1,391 @@
+// --------- Styles --------- //
+
+
+/* ----------- GENERAL ----------- */
+body {
+  background-color: $white;
+  font-family: 'Arial', sans-serif;
+}
+
+.side-sales-sticker {
+  display: inline-block;
+  position: fixed;
+  left: -10px;
+  top: 40vh;
+  padding: 15px 10px 15px 20px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  background-color: $primary_color;
+  color: $white;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  text-transform: uppercase;
+  transition: left cubic-bezier(0.17, 0.84, 0.44, 1) .3s;
+
+  &:hover {
+    left: 0;
+    cursor: pointer;
+  }
+}
+
+h3 {
+  margin: 5px 0 15px 0;
+  @include font-custom($black, 700);
+  font-size: 1.2em;
+}
+
+h4 {
+  color: $dark_grey;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+[class*="btn--"] {
+  padding: 1rem;
+  border-radius: 0;
+  font-weight: 700;
+  font-size: 1rem;
+  color: $black;
+  background-color: transparentize($black, 0.8);
+  border: 1px solid transparentize($white, 0);
+  transition:
+    background-color .3s cubic-bezier(0.17, 0.84, 0.44, 1),
+    border .3s cubic-bezier(0.17, 0.84, 0.44, 1),
+    color .3s cubic-bezier(0.17, 0.84, 0.44, 1);
+}
+
+[class$="btn--primary"] {
+  background-color: $primary_color;
+  border: 1px solid $primary_color;
+  color: $white;
+  &:hover {
+    background-color: $white;
+    color: $primary_color;
+  }
+}
+
+[class$="btn--secondary"] {
+  background-color: $light_grey;
+  border: 1px solid $light_grey;
+  color: $black;
+  &:hover {
+    background-color: $white;
+  }
+}
+
+hr {
+  margin: 1rem 0;
+}
+
+/* ----------- HEADER ----------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  .banner {
+    background-color: $primary_color;
+    padding: 1em;
+
+    h1 {
+      @include font-custom($white, 700);
+      font-size: 2em;
+
+      span {
+        font-weight: 500;
+        font-size: .4em;
+      }
+    }
+  }
+
+  .banner__sub {
+    background-color: $dark_grey;
+    padding: 10px 25px 5px 25px;
+
+    h2 {
+      text-align: center;
+      @include font-custom($white, 400);
+      font-size: 1em;
+
+      span {
+        font-style: italic;
+        font-size: 1.1em;
+      }
+    }
+  }
+}
+
+/* ----------- PRODUCT PAGE ----------- */
+main.product-page {
+  padding: 25px 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px 15px;
+
+  .product {
+    position: relative;
+    max-width: 30%;
+    min-width: 240px;
+    flex-grow: 1;
+    box-sizing: border-box;
+    border: 1px solid $light_grey;
+    padding: .5em;
+    box-shadow: 0 0 0 $black;
+    transition: box-shadow cubic-bezier(0.17, 0.84, 0.44, 1) .3s;
+
+    .product__sale-sticker {
+      position: absolute;
+      top: .9em;
+      right: .9em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 3.5em;
+      height: 3.5em;
+      border-radius: 50%;
+      background-color: $dark_grey;
+      border: 5px solid $light_grey;
+      @include font-custom($white, 700);
+      font-size: 1.1em;
+      transform: rotate(0deg);
+      transition: transform cubic-bezier(0.17, 0.84, 0.44, 1) .5s;
+    }
+
+    img {
+      display: inline-block;
+      width: 100%;
+    }
+
+    .product__subtext {
+      margin: 1em 0;
+      padding: .3em;
+      border-bottom: 1px solid $light_grey;
+      @include font-custom($light_grey, 700);
+      font-size: .7em;
+      text-transform: uppercase;
+    }
+
+    .product__description {
+      margin-bottom: 25px;
+      @include font-custom($black, 500);
+      font-size: .9em;
+      line-height: 1.2em;
+    }
+
+    .product__add-to-cart-btn {
+      display: flex;
+      width: 100%;
+      padding: 15px;
+      border: 1px solid $primary_color;
+      background-color: $primary_color;
+      @include font-custom($white, 500);
+      font-size: .8em;
+      transition: all cubic-bezier(0.17, 0.84, 0.44, 1) .2s;
+
+      .product__add-to-cart-btn__btn-txt {
+        flex-grow: 1;
+        text-align: left;
+      }
+
+      .product__add-to-cart-btn__old-price {
+        text-decoration: line-through;
+        margin-right: 5px;
+      }
+
+      .product__add-to-cart-btn__price {
+        font-size: 1.2em;
+        font-weight: 600;
+      }
+
+      &:hover {
+        cursor: pointer;
+        background-color: $white;
+        color: $primary_color;
+        transition: all cubic-bezier(0.17, 0.84, 0.44, 1) .2s;
+      }
+    }
+
+    &:hover {
+      @include box-shadow($black, 70);
+
+      .product__sale-sticker {
+        transform: rotate(30deg);
+      }
+    }
+  }
+}
+
+/* ----------- CART PAGE ----------- */
+main.cart-page {
+  width: 75%;
+  max-width: 600px;
+  margin: 30px auto 20px auto;
+  @include font-custom($black, 500);
+
+  .cart-form {
+
+    /* Table */
+    .cart-form__cart {
+      width: 95%;
+      margin: 20px auto 15px auto;
+      text-align: center;
+      @include box-shadow($black, 70);
+      > thead {
+        font-weight: 700;
+        border-bottom: 1px solid $light_grey;
+        > tr {
+          > td {
+            padding: 1rem;
+          }
+        }
+      }
+      > tbody {
+        > tr {
+          &:nth-child(odd) {
+            background-color: $light_grey;
+          }
+          > td {
+            padding: .7rem;
+            &.quantity-cell {
+              input {
+                min-width: 2rem;
+                max-width: 2.5rem;
+              }
+              button {
+                color: $primary_color;
+                text-decoration: underline;
+                text-transform: lowercase;
+                font-size: .8rem;
+                background: none;
+                border: none;
+                transition: color .3s cubic-bezier(0.17, 0.84, 0.44, 1);
+                &:hover {
+                  cursor: pointer;
+                  color: darken($primary_color, 20%);
+                }
+              }
+            }
+          }
+        }
+      }
+      >tfoot {
+        font-weight: 700;
+        > tr {
+          > td {
+            padding: 1rem;
+            &.total-cell {
+              color: $primary_color;
+              font-size: 1.6rem;
+            }
+          }
+        }
+      }
+    }
+
+    /* Shipping form */
+    .cart-form__address {
+      display: flex;
+      width: 95%;
+      margin: 2rem auto 0 auto;
+      > * {
+        width: 50%;
+      }
+      [class^="cart-form__address__"] {
+        [class$="__input-group"] {
+          margin-bottom: 1.5rem;
+        }
+      }
+      /* left side */
+      .cart-form__address__options {
+        .cart-form__address__options__input-group {
+          margin-bottom: 1.5rem;
+          > div {
+            margin-bottom: .5rem;
+            font-size: .9rem;
+            > *:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      /* right side */
+      .cart-form__address__postal-address {
+        .cart-form__address__postal-address__input-group {
+          > div {
+            display: flex;
+            flex-direction: column;
+            font-size: .9rem;
+            > * {
+              margin-bottom: .3rem;
+            }
+            input, textarea {
+              box-sizing: border-box;
+              border: none;
+              border-bottom: 1px solid lighten($dark_grey, 20%);
+              background-color: lighten($light_grey, 10%);
+              padding: .5rem;
+              transition: 
+              border-bottom .3s cubic-bezier(0.17, 0.84, 0.44, 1),
+              background-color .3s cubic-bezier(0.17, 0.84, 0.44, 1);
+              &:focus, &:focus-visible {
+                outline: none;
+                border-bottom: 1px solid $dark_grey;
+                background-color: lighten($light_grey, 5%);
+              }
+            }
+            textarea {
+              resize: vertical;
+            }
+          }
+        }
+      }
+    }
+
+    /* Summary */
+    .cart-form__total {
+      width: 95%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      
+      border-radius: .3rem;
+      @include box-shadow($black, 70%);
+      > * {
+        padding: 2rem;
+        font-weight: 700;
+      }
+      .cart-form__total__text {
+        font-size: 1.2rem;
+      }
+      .cart-form__total__amount {
+        color: $primary_color;
+        font-size: 1.6rem;
+      }
+    }
+
+    /* Action button */
+    .cart-form__submit {
+      width: 95%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+/* ----------- FOOTER ----------- */
+footer {
+  .footer__decoration {
+    height: 12px;
+    background-image: url(../images/deco.png);
+    background-repeat: repeat-x;
+  }
+
+  .footer__infos {
+    padding: .5em 1.5em 1em 1.5em;
+    background-color: $dark_grey;
+    text-align: center;
+    @include font-custom($white, 500);
+    font-size: .8em;
+  }
+}

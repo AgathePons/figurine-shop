@@ -1,0 +1,9 @@
+@mixin font-custom($color, $weight) {
+    font-family: 'Raleway', sans-serif;
+    color: $color;
+    font-weight: $weight;
+}
+
+@mixin box-shadow($color, $lighten) {
+    box-shadow: 0 0 5px lighten($color, $lighten);
+}
