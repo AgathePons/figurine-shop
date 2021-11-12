@@ -8,7 +8,7 @@ body {
 }
 
 .side-sales-sticker {
-  display: inline-block;
+  display: none;
   position: fixed;
   left: -10px;
   top: 40vh;
@@ -32,6 +32,7 @@ h3 {
   margin: 5px 0 15px 0;
   @include font-custom($black, 700);
   font-size: 1.2em;
+  text-align: center;
 }
 
 h4 {
@@ -217,7 +218,7 @@ main.product-page {
 
 /* ----------- CART PAGE ----------- */
 main.cart-page {
-  width: 75%;
+  width: 95%;
   max-width: 600px;
   margin: 30px auto 20px auto;
   @include font-custom($black, 500);
@@ -285,10 +286,12 @@ main.cart-page {
     /* Shipping form */
     .cart-form__address {
       display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 95%;
       margin: 2rem auto 0 auto;
       > * {
-        width: 50%;
+        width: 85%;
       }
       [class^="cart-form__address__"] {
         [class$="__input-group"] {
@@ -351,7 +354,7 @@ main.cart-page {
       border-radius: .3rem;
       @include box-shadow($black, 70%);
       > * {
-        padding: 2rem;
+        padding: 1rem;
         font-weight: 700;
       }
       .cart-form__total__text {
@@ -368,7 +371,12 @@ main.cart-page {
       width: 95%;
       margin: 0 auto;
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
+      
+      > button:not(:last-child) {
+        margin-bottom: 1rem;
+      }
     }
   }
 }

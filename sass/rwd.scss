@@ -1,0 +1,31 @@
+@media screen and (min-width: 768px) {
+  h3 {
+    text-align: left;
+  }
+  .side-sales-sticker {
+    display: inline-block;
+  }
+  main.cart-page {
+    width: 75%;
+    .cart-form {
+      .cart-form__address {
+        flex-direction: row;
+        align-items: flex-start;
+        > * {
+          width: 50%;
+        }
+      }
+      .cart-form__total {
+        > * {
+          padding: 2rem;
+        }
+      }
+      .cart-form__submit {
+        flex-direction: row;
+        > button:not(:last-child) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
