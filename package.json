@@ -1,0 +1,24 @@
+{
+  "name": "s01e04-challenge-ofig-agathepons",
+  "version": "1.0.0",
+  "description": "challenge S01 E04",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/style.css --style expanded"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/O-clock-Zagreus/S01E04-challenge-oFig-AgathePons.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "flexbox"
+  ],
+  "author": "Agathe Pons",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/O-clock-Zagreus/S01E04-challenge-oFig-AgathePons/issues"
+  },
+  "homepage": "https://github.com/O-clock-Zagreus/S01E04-challenge-oFig-AgathePons#readme"
+}
